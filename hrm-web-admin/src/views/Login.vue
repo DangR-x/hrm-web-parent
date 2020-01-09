@@ -47,25 +47,9 @@
         var _this = this;
         this.$refs.ruleForm2.validate((valid) => {
           if (valid) {
-            //_this.$router.replace('/table');
             this.logining = true;
-            //NProgress.start();
             var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
-              /*requestLogin(loginParams).then(data => {
-                this.logining = false;
-                //NProgress.done();
-                  let { msg, code, user } = data;
-                  if (code !== 200) {
-                    this.$message({
-                      message: msg,
-                      type: 'error'
-                    });
-                  } else {
-                    sessionStorage.setItem('user', JSON.stringify(user));
-                    this.$router.push({ path: '/main' });
-                  }
 
-              });*/
               let user ={
                   id: 1,
                   username: 'admin',

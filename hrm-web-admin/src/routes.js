@@ -3,11 +3,10 @@ import NotFound from './views/404.vue'
 import Home from './views/Home.vue'
 import Table from './views/nav1/Table.vue'
 import Form from './views/nav1/Form.vue'
-import user from './views/nav1/user.vue'
-import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 import echarts from './views/charts/echarts.vue'
 import Course from './course/CourseType.vue'
+import TenantRegister from './course/TenantRegister'
 
 let routes = [
     {
@@ -26,39 +25,38 @@ let routes = [
         path: '/',
         component: Home,
         name: '',
-        iconCls: 'fa fa-address-card',
+        iconCls: 'el-icon-loading',
         leaf: true,//只有一个节点
         children: [
             { path: '/main', component: echarts, name: '首页', hidden: true }
-        ]
-    },
-    //{ path: '/main', component: Main },
-    {
-        path: '/',
-        component: Home,
-        name: '导航一',
-        iconCls: 'el-icon-message',//图标样式class
-        children: [
-            { path: '/table', component: Table, name: 'Table' },
-            { path: '/form', component: Form, name: 'Form' },
-            { path: '/user', component: user, name: '列表' },
         ]
     },
     {
         path: '/',
         component: Home,
         name: '课程管理',
-        iconCls: 'fa fa-id-card-o',
+        iconCls: 'el-icon-s-grid',
         children: [
             { path: '/course', component: Course, name: '课程类型' },
-            { path: '/page5', component: Page5, name: '页面5' }
+            { path: '/page5', component: Page5, name: '课程管理' }
+        ]
+    },
+    //{ path: '/main', component: Main },
+    {
+        path: '/',
+        component: Home,
+        name: '人员配置',
+        iconCls: 'el-icon-s-custom',//图标样式class
+        children: [
+            { path: '/table', component: Table, name: '公司员工' },
+            { path: '/tenantRegister', component: TenantRegister, name: '租户管理' },
         ]
     },
     {
         path: '/',
         component: Home,
         name: 'Charts',
-        iconCls: 'fa fa-bar-chart',
+        iconCls: 'el-icon-upload',
         children: [
             { path: '/echarts', component: echarts, name: 'echarts' }
         ]
